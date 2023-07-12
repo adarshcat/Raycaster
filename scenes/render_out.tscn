@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://caeawobiswxr6"]
+
+[ext_resource type="Script" path="res://scripts/render_out.gd" id="1_iinji"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="2_rk43l"]
+
+[node name="renderOut" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iinji")
+
+[node name="outTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ui" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_rk43l")
+
+[node name="fovHbox" type="HBoxContainer" parent="ui"]
+layout_mode = 2
+
+[node name="fovLabel" type="Label" parent="ui/fovHbox"]
+layout_mode = 2
+text = "FOV: "
+
+[node name="fovSlider" type="HSlider" parent="ui/fovHbox"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 120.0
+step = 0.1
+value = 60.0
+
+[node name="fovNum" type="Label" parent="ui/fovHbox"]
+layout_mode = 2
+text = "60"
+
+[connection signal="value_changed" from="ui/fovHbox/fovSlider" to="ui" method="_on_fov_slider_changed"]

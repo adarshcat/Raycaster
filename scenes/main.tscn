@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cikg6pedovtrt"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ulh3a"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_4yvyd"]
+[ext_resource type="Texture2D" uid="uid://enu7kdkkwxim" path="res://icon.svg" id="3_uxtc0"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ulh3a")
+
+[node name="player" type="RayCast2D" parent="."]
+position = Vector2(227, 306)
+target_position = Vector2(25, 0)
+collide_with_bodies = false
+script = ExtResource("2_4yvyd")
+
+[node name="wallCont" type="Node2D" parent="."]
+
+[node name="wall1" type="Line2D" parent="wallCont"]
+points = PackedVector2Array(634, 154, 455, 426, 618, 539, 543, 636, 284, 462, 182, 587, -52, 394, 73, 236)
+
+[node name="wall2" type="Line2D" parent="wallCont"]
+points = PackedVector2Array(169, 134, 296, 13, 510, 154, 395, 211)
+
+[node name="ref" type="Sprite2D" parent="."]
+scale = Vector2(0.234375, 0.234375)
+texture = ExtResource("3_uxtc0")
