@@ -1,4 +1,4 @@
-# Simple-Raycasting-Rendering
+# Raycaster
 
 Simple raysting engine in Godot using compute shaders
 
